@@ -14,6 +14,7 @@ gem 'twitter-bootstrap-rails'
 #gem 'jquery_ujs'
 gem 'jquery-rails'
 gem 'devise'
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
