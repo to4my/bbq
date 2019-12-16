@@ -269,3 +269,7 @@ ru:
   app:
     name: 'Шашлыки'
     company: 'Хороший программист'
+
+  controllers:
+    users:
+      updated: 'Ваш профиль успешно сохранен!'
