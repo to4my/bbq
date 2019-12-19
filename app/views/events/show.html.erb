@@ -17,15 +17,45 @@
 
           <% if current_user_can_edit?(@event) %>
             <div class="buffer-both">
-              <%= link_to 'Изменить', edit_event_path(@event),
-                          class: 'btn btn-primary' %>
-              <%= link_to 'Удалить событие', event_path, method: :delete,
-                          data: {confirm: 'Если Вы уверены, то нажмите да'},
-                          class: 'btn btn-danger' %>
+              <%= link_to t('devise.registrations.edit.update'), edit_event_path(@event), class: 'btn btn-primary' %>
+              <%= link_to t('devise.shared.links.delete'), event_path(@event), method: :delete,
+                          data: {confirm: t('devise.registrations.edit.are_you_sure')}, class: 'btn btn-danger' %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="event-comments buffer-top">
+        <div class="buffer-both">
+          <%= render partial: 'comments/comment', collection: @event.comments %>
+        </div>
+      </div>
+    </div>
+
+
+
+<div class="col-md-4">
+  <div class="event-owner">
+    <h4>Зовет:</h4>
+    <p><%= render partial: 'users/user', object: @event.user %></p>
+  </div>
+  <div class="event-subscriptions">
+
+    <h4>Пойдут:</h4>
+    <div>
+      <p>
+        <%= render partial: 'subscriptions/subscription',
+                   collection: @event.subscriptions %>
+      </p>
+    </div>
+  </div>
+  <div class="event-subscription-form">
+    <h4>Я пойду:</h4>
+  </div>
+  </div>
+</div>
 </div>

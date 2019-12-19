@@ -17,3 +17,8 @@ require("packs/bootstrap")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import 'bootstrap'
+import '../../assets/stylesheets/application.css'
+//= require rails-ujs
+
