@@ -1,11 +1,4 @@
 ru:
-  activerecord:
-    errors:
-      messages:
-        record_invalid: 'Возникли ошибки: %{errors}'
-        restrict_dependent_destroy:
-          has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
-          has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
   date:
     abbr_day_names:
       - Вс
@@ -268,10 +261,9 @@ ru:
     pm: вечера
   app:
     name: 'Шашлыки'
-    company: 'Хороший программист'
-
+    company: 'Xороший программист'
   activerecord:
-    # Перевод названия моделей
+
     models:
       user: 'Пользователь'
       event: 'Событие'
@@ -294,3 +286,9 @@ ru:
       destroyed: 'Вы удалили мероприятие :('
     users:
       updated: 'Вы обновили свой профиль'
+    errors:
+      messages:
+        record_invalid: 'Возникли ошибки: %{errors}'
+        restrict_dependent_destroy:
+          has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
+          has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
