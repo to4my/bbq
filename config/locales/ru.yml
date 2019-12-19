@@ -262,6 +262,15 @@ ru:
   app:
     name: 'Шашлыки'
     company: 'Xороший программист'
+  comments:
+    comment:
+      destroy_confirm: Вы уверены, что хотите удалить этот комментарий?
+  subscriptions:
+    subscription:
+      destroy_confirm: Вы уверены, что хотите удалить эту подписку?
+
+
+
   activerecord:
 
     models:
@@ -290,6 +299,10 @@ ru:
       created: 'Комментарий добавлен'
       destroyed: 'Комментарий удалён'
       error: 'Ошибка с комментарием'
+    subscriptions:
+      created: Вы подписаны на это событие
+      destroyed: Участник отписан
+      error: Подписка/отписка не сработала
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
