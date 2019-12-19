@@ -53,5 +53,6 @@ ActiveRecord::Schema.define(version: 2019_12_19_104738) do
   end
 
   add_foreign_key "comments", "events"
+  add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
 end

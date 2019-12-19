@@ -286,6 +286,10 @@ ru:
       destroyed: 'Вы удалили мероприятие :('
     users:
       updated: 'Вы обновили свой профиль'
+    comments:
+      created: 'Комментарий добавлен'
+      destroyed: 'Комментарий удалён'
+      error: 'Ошибка с комментарием'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
