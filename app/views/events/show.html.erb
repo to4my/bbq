@@ -58,8 +58,8 @@
         <h4>Я пойду:</h4>
         <div>
           <p>
-            <%= render partial: 'subscriptions/subscription',
-                       collection: @event.subscriptions.except(@new_subscription) %>
+            <%= render partial: 'subscriptions/form',
+                       locals: {subscription: @new_subscription || @event.subscription.build} %>
           </p>
         </div>
       </div>
