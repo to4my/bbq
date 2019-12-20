@@ -19,5 +19,5 @@ require("jquery")
 
 import 'bootstrap'
 import '../../assets/stylesheets/application.css'
-//= require rails-ujs
+
 
