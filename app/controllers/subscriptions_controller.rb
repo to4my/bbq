@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
     @new_subscription.user = current_user_can_edit?
 
     if @new_subscription.save
-      redirect_to @event, notice: t('controllers.subscriptions.created')}
+      redirect_to @event, notice: t('controllers.subscriptions.created')
     else
       render 'events/show', alert: t('controllers.subscriptions.error')
     end
