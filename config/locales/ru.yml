@@ -279,6 +279,7 @@ ru:
 
     attributes:
       send: 'Отправить'
+      go: 'Пойду'
       user:
         email: 'Email'
         name: 'Имя'
