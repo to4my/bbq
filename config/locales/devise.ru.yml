@@ -66,3 +66,7 @@ ru:
         few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         other: "%{resource}: сохранение не удалось из-за %{count} ошибок"
+  activerecord:
+    models:
+      controller:
+        body: "Комментарий"

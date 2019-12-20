@@ -278,6 +278,7 @@ ru:
       event: 'Событие'
 
     attributes:
+      send: 'Отправить'
       user:
         email: 'Email'
         name: 'Имя'
@@ -289,6 +290,7 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
   controllers:
+    body: 'Коментарий'
     events:
       created: 'Вы создали новое мероприятие'
       updated: 'Вы обновили мероприятие'
