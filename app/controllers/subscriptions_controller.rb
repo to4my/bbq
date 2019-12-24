@@ -4,42 +4,40 @@ class SubscriptionsController < ApplicationController
 
   def create
     @new_subscription = @event.subscriptions.build(subscription_params)
-    @new_subscription.user = current_user_can_edit?
+    @new_subscription.user = current_user
 
     if @new_subscription.save
-      redirect_to @event, notice: t('controllers.subscriptions.created')}
+      redirect_to @event, notice: t('controllers.subscriptions.created')
     else
       render 'events/show', alert: t('controllers.subscriptions.error')
     end
   end
-end
 
-def destroy
-  message = {notice: t('controllers.subscriptions.destroyed')}
+  def destroy
+    message = {notice: t('controllers.subscriptions.destroyed')}
 
-  if current_user_can_edit?(@subscription)
-    @subscription.destroy
-  else
-    message = {alert: t('controllers.subscriptions.error')}
+    if current_user_can_edit?(@subscription)
+      @subscription.destroy
+    else
+      message = {alert: t('controllers.subscriptions.error')}
+    end
+
+    redirect_to @event, message
   end
 
-  redirect_to @event, message
-end
 
-end
+  private
 
-private
+  def set_subscription
+    @subscription = @event.subscriptions.find(params[:id])
+  end
 
-def set_subscription
-  @subscription = @event.subscriptions.find(params[:id])
-end
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
 
-def set_event
-  @event = Event.find(params[:event_id])
-end
-
-def subscription_params
-  params.fetch(:subscription, {}).permit(:user_email, :user_name)
-end
+  def subscription_params
+    params.fetch(:subscription, {}).permit(:user_email, :user_name)
+  end
 
 end

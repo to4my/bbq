@@ -2,12 +2,9 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.0]
   def self.up
 
     change_table :users do |t|
-<<<<<<< HEAD
 
-      t.change :email, :string, null: false, default: "" # меняем таблицу email - новые ограничения
-=======
       t.change :email, :string, null: false, default: ""
->>>>>>> 92998382ae258b111fbe3d9f9d901114d4c28ca9
+
       t.string :encrypted_password, null: false, default: ""
 
       t.string :reset_password_token
