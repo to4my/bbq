@@ -39,6 +39,5 @@ yarn-debug.log*
 /DS_Store
 .browserslistrc
 .ruby-version
-/app/uploaders/
 /public/uploads/
 
