@@ -264,18 +264,17 @@ ru:
     company: 'Xороший программист'
   comments:
     comment:
-      destroy_confirm: Вы уверены, что хотите удалить этот комментарий?
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
   subscriptions:
     subscription:
-      destroy_confirm: Вы уверены, что хотите удалить эту подписку?
-
-
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
 
   activerecord:
-
     models:
       user: 'Пользователь'
       event: 'Событие'
+      controller:
+        body: "Комментарий"
 
     attributes:
       send: 'Отправить'
@@ -285,6 +284,8 @@ ru:
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+        avatar: 'Аватар'
+        submit: 'Сохранить'
       event:
         title: 'Название'
         address: 'Место проведения'

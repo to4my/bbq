@@ -21,12 +21,10 @@ class UsersController < ApplicationController
   private
 
   def set_current_user
-    @user = User.new(user_params)
-    #@user.save
-    #@user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :avatar)
   end
 end
