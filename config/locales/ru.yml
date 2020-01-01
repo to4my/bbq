@@ -291,6 +291,7 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+
   controllers:
     body: 'Коментарий'
     events:
@@ -313,3 +314,13 @@ ru:
         restrict_dependent_destroy:
           has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
           has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
+  models:
+    photo: 'Фотография'
+
+  attributes:
+    photo:
+      photo: 'Фотография'
