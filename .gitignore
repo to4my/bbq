@@ -40,4 +40,6 @@ yarn-debug.log*
 .browserslistrc
 .ruby-version
 /public/uploads/
+.env
+
 
