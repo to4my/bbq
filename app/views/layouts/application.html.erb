@@ -11,7 +11,8 @@
 
   <%= javascript_pack_tag "application" %>
 
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="https://api-maps.yandex.ru/2.1?apikey=<%= ENV['YANDEX_MAP_API'] %>&lang=ru_RU"
+          type="text/javascript">
   <script src="maps.js" type="text/javascript"></script>
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
