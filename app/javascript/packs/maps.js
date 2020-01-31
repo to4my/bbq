@@ -1,14 +1,16 @@
-document.addEventListener("turbolinks:load", () => {
+$(function() {
     ymaps.ready(init);
-    var myMap;
 
     function init() {
-        address = document.getElementById('map').getAttribute('data-address');
-
-        myMap = new ymaps.Map("map", {
-            center: [55.76, 37.64],
-            zoom: 10
-        });
+        address = null;
+        map = document.getElementById('map');
+        if (map) {
+            address = map.getAttribute('data-address');
+            var myMap = new ymaps.Map("map", {
+                center: [55.76, 37.64],
+                zoom: 10
+            });
+        }
 
         myGeocoder = ymaps.geocode(address);
 
