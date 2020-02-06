@@ -22,14 +22,18 @@
 /storage/*
 !/storage/.keep
 
-/public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/database.yml
+/config/secrets.yml
 
+/public/assets
 /public/packs
 /public/packs-test
+/public/uploads/
+
 /node_modules
 /yarn-error.log
 yarn-debug.log*
@@ -39,7 +43,5 @@ yarn-debug.log*
 /DS_Store
 .browserslistrc
 .ruby-version
-/public/uploads/
 .env
-
 
