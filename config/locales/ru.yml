@@ -1,4 +1,7 @@
 ru:
+  about:
+    company: Mike
+    year: 1999 - 2099
   date:
     abbr_day_names:
       - Вс
