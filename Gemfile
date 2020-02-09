@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
 gem 'dotenv-rails'
+gem 'pundit'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
