@@ -64,19 +64,13 @@ class EventsController < ApplicationController
   end
 
   def password_guard!
-    # Если у события нет пин-кода, то охранять нечего
     return true if @event.pincode.blank?
-    # Пин-код не нужен автору события
     return true if signed_in? && current_user == @event.user
 
-    # Если нам передали код и он верный, сохраняем его в куки этого юзера
-    # Так юзеру не нужно будет вводить пин-код каждый раз
     if params[:pincode].present? && @event.pincode_valid?(params[:pincode])
       cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
     end
 
-    # Проверяем, верный ли в куках пин-код
-    # Если нет — ругаемся и рендерим форму ввода пин-кода
     pincode = cookies.permanent["events_#{@event.id}_pincode"]
     unless @event.pincode_valid?(pincode)
       if params[:pincode].present?
