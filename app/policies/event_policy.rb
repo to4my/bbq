@@ -1,13 +1,6 @@
 class EventPolicy < ApplicationPolicy
-  def create?
-    user.present?
-  end
 
   def destroy?
-    update?
-  end
-
-  def show?
     update?
   end
 
@@ -15,13 +8,11 @@ class EventPolicy < ApplicationPolicy
     user_is_owner?(record)
   end
 
-  #class Scope < Scope
-  #  def resolve
-  #    if user.present?
-  #      user.admin? ? scope.all : scope.where(user: user)
-  #    end
-  #  end
-  #end
+  class Scope < Scope
+   def resolve
+      scope.all
+     end
+   end
 
   private
 
