@@ -22,7 +22,11 @@ gem 'pundit'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'pundit-matchers'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git'
 end
 
 group :production do

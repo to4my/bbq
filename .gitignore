@@ -44,4 +44,5 @@ yarn-debug.log*
 .browserslistrc
 .ruby-version
 .env
+.rspec
 
