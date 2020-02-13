@@ -1,6 +1,14 @@
 class EventPolicy < ApplicationPolicy
 
+  def create?
+    user.present?
+  end
+
   def destroy?
+    update?
+  end
+
+  def show?
     update?
   end
 
@@ -9,10 +17,10 @@ class EventPolicy < ApplicationPolicy
   end
 
   class Scope < Scope
-   def resolve
+    def resolve
       scope.all
-     end
-   end
+    end
+  end
 
   private
 
