@@ -9,7 +9,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    update?
+    true
   end
 
   def update?
