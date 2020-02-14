@@ -28,6 +28,10 @@ class EventPolicy < ApplicationPolicy
     user_is_owner?(record)
   end
 
+  def subscribe?
+    !edit?
+  end
+
   class Scope < Scope
     def resolve
       scope.all
