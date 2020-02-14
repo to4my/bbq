@@ -4,8 +4,20 @@ class EventPolicy < ApplicationPolicy
     user.present?
   end
 
+  def new?
+    create?
+  end
+
+  def edit?
+    update?
+  end
+
   def destroy?
     update?
+  end
+
+  def index?
+    true
   end
 
   def show?
