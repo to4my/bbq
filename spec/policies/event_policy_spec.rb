@@ -8,7 +8,7 @@ RSpec.describe EventPolicy, type: :policy do
     subject { described_class.new(user, event) }
 
     it { is_expected.to permit_actions(%i[edit update destroy]) }
-    it { is_expected.to forbid_actions(%i[index new show create]) }
+    it { is_expected.to permit_actions(%i[index new show create]) }
   end
 
   context 'when not owner' do
@@ -23,5 +23,19 @@ RSpec.describe EventPolicy, type: :policy do
     subject { described_class.new(nil, event) }
 
     it { is_expected.to forbid_actions(%i[edit update destroy]) }
+  end
+
+  context 'not subscribe event self' do
+    subject {described_class.new(user, event)}
+
+    it {is_expected.to forbid_action(:subscribe)}
+  end
+
+  context 'subscribe other event' do
+    subject {described_class.new(user3, event)}
+
+    let(:user3) { FactoryBot.create(:user) }
+
+    it {is_expected.to permit_action(:subscribe)}
   end
 end

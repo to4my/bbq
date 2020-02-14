@@ -69,16 +69,16 @@
         </div>
       </div>
       <% if policy(@event).subscribe? %>
-      <div class="event-subscription-form">
-        <h4>Я пойду:</h4>
-        <div>
-          <p>
-            <%= render partial: 'subscriptions/form',
-                       locals: {subscription: @new_subscription || @event.subscription.build} %>
-          </p>
+        <div class="event-subscription-form">
+          <h4>Я пойду:</h4>
+          <div>
+            <p>
+              <%= render partial: 'subscriptions/form',
+                         locals: {subscription: @new_subscription || @event.subscription.build} %>
+            </p>
+          </div>
         </div>
-      </div>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
