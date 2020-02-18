@@ -1,7 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.2"
 
-after "deploy:restart", "resque:restart"
 
 set :application, "bbq"
 set :repo_url, "git@github.com:to4my/bbq.git"
@@ -11,6 +10,8 @@ set :repo_url, "git@github.com:to4my/bbq.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/apps/bbq"
+
+after "deploy:restart", "resque:restart"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -39,3 +40,6 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+
+
