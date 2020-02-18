@@ -35,11 +35,11 @@ group :production do
 end
 
 group :development do
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-passenger'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
+  gem 'capistrano', '~> 3.12'
+  gem 'capistrano-bundler', '~> 1.6'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.6'
   gem 'capistrano-resque', '~> 0.2.3', require: false
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
