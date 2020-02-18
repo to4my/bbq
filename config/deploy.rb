@@ -1,6 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.2"
 
+after "deploy:restart", "resque:restart"
+
 set :application, "bbq"
 set :repo_url, "git@github.com:to4my/bbq.git"
 
