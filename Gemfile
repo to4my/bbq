@@ -25,7 +25,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'pundit-matchers'
-  gem 'resque', '~> 2.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git'
 end
@@ -35,6 +34,7 @@ group :production do
 end
 
 group :development do
+  gem 'resque', '~> 2.0'
   gem 'capistrano', '~> 3.12'
   gem 'capistrano-bundler', '~> 1.6'
   gem 'capistrano-passenger', '~> 0.2.0'
