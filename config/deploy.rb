@@ -11,7 +11,6 @@ set :repo_url, "git@github.com:to4my/bbq.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/apps/bbq"
 
-after "deploy:restart", "resque:restart"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -28,6 +27,8 @@ append :linked_files, "config/database.yml", "config/secrets.yml", ".env"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system","public/uploads","vendor/bundle"
+
+after "deploy:restart", "resque:restart"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
