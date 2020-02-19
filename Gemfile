@@ -19,6 +19,7 @@ gem 'rmagick'
 gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'pundit'
+gem 'resque', '~> 2.0'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
@@ -34,7 +35,6 @@ group :production do
 end
 
 group :development do
-  gem 'resque', '~> 2.0'
   gem 'capistrano', '~> 3.12'
   gem 'capistrano-bundler', '~> 1.6'
   gem 'capistrano-passenger', '~> 0.2.0'
