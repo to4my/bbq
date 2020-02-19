@@ -50,6 +50,15 @@ class PhotosController < ApplicationController
     @photo = @event.photos.find(params[:id])
   end
 
+  def notify_about_photo(photo)
+    all_emails = (@event.subscriptions.map(&:user_email) +
+        [@event.user.email] - [photo.user.email]).uniq
+
+    all_emails.each do |mail|
+      EventMailer.photo(@event, photo, mail).deliver_later
+    end
+  end
+
   # При создании новой фотографии мы получаем массив параметров photo
   # c единственным полем photo
   def photo_params
