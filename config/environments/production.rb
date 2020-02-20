@@ -5,6 +5,7 @@ Rails.application.configure do
 
   config.active_job.queue_adapter = :resque
   config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
+
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
