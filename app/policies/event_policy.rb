@@ -32,6 +32,10 @@ class EventPolicy < ApplicationPolicy
     !edit?
   end
 
+  def photo?
+    user.present?
+  end
+
   class Scope < Scope
     def resolve
       scope.all
