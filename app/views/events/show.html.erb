@@ -75,8 +75,9 @@
           <h4>Я пойду:</h4>
           <div>
             <p>
-              <%= render partial: 'subscriptions/form',
-                         locals: {subscription: @new_subscription || @event.subscription.build} %>
+              <%= render partial: 'subscriptions/form', locals: {
+                  subscription: @new_subscription || @event.subscriptions.build
+              } %>
             </p>
           </div>
         </div>
