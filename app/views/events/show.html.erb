@@ -61,14 +61,15 @@
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       <div class="event-subscriptions">
-
-        <h4>Пойдут:</h4>
-        <div>
-          <p>
-            <%= render partial: 'subscriptions/subscription',
+        <% if @event.subscriptions.except(@new_subscription).count > 0 %>
+          <h4>Пойдут:</h4>
+          <div>
+            <p>
+              <%= render partial: 'subscriptions/subscription',
                        collection: @event.subscriptions.except(@new_subscription) %>
-          </p>
-        </div>
+             </p>
+          </div>
+        <% end %>
       </div>
       <% if policy(@event).subscribe? %>
         <div class="event-subscription-form">
