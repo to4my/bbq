@@ -11,6 +11,7 @@ class Subscription < ApplicationRecord
 
   validates :user, uniqueness: {scope: :event_id}, if: -> { user.present? }
   validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
+  validate :email_used?, on: :create, unless: -> { user.present? }
 
   def user_name
     user.present? ? user.name : super
@@ -18,5 +19,11 @@ class Subscription < ApplicationRecord
 
   def user_email
     user.present? ? user.email : super
+  end
+
+  private
+
+  def email_used?
+    errors.add(:user_email, I18n.t('subscriptions.email_used')) if User.where(email: user_email).present?
   end
 end

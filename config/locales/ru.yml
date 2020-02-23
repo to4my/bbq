@@ -69,6 +69,8 @@ ru:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
   subscriptions:
+    email_used: 'Этот пользователь уже подписан на событие'
+    name_used: 'Залогиньтесь, чтобы писать от своего имени'
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить подписку?'
   messages:
