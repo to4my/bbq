@@ -19,5 +19,4 @@ class Subscription < ApplicationRecord
   def user_email
     user.present? ? user.email : super
   end
-
 end

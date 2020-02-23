@@ -66,12 +66,12 @@
           <div>
             <p>
               <%= render partial: 'subscriptions/subscription',
-                       collection: @event.subscriptions.except(@new_subscription) %>
-             </p>
+                         collection: @event.subscriptions.except(@new_subscription) %>
+            </p>
           </div>
         <% end %>
       </div>
-      <% if policy(@event).subscribe? %>
+      <% if policy(@event).subscribe? && !@event.subscribers.include?(current_user) %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>
