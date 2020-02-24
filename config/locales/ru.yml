@@ -18,6 +18,7 @@ ru:
         password: 'Пароль'
         avatar: 'Аватарка'
         password_confirmation: 'Подтверждение пароля'
+        submit: 'Отправить'
       event:
         title: 'Название'
         address: 'Место проведения'

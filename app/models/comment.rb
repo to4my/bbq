@@ -12,7 +12,7 @@ class Comment < ApplicationRecord
   end
 
   private
-  
+
   def name_used?
     errors.add(:user_name, I18n.t('subscriptions.name_used')) if User.where(name: user_name).present?
   end
