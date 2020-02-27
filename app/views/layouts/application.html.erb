@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
+  <%= csrf_meta_tags %>
+  <script src="https://api-maps.yandex.ru/2.1?apikey=<%= ENV['YANDEX_MAP_API'] %>&lang=ru_RU"
+          type="text/javascript">
+  </script>
+
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_pack_tag "application" %>
+
+</head>
 <body>
 <div class="navbar navbar-default navbar-static-top">
   <div class="container">
@@ -10,10 +24,10 @@
         <% if user_signed_in? %>
           <li class="navbar-text"><%= render partial: 'users/user', object: current_user %></li>
           <li><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
-      <% else %>
+        <% else %>
           <li><%= link_to 'Войти', new_user_session_path %></li>
           <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -29,24 +43,10 @@
     <div class="col-lg-3">
     </div>
   </div>
+</div>
 
+</body>
   <footer>
     <p>&copy; <%= t 'about.company' %> <%= t 'about.year' %></p>
   </footer>
-</div>
-</body>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
-  <%= csrf_meta_tags %>
-  <script src="https://api-maps.yandex.ru/2.1?apikey=<%= ENV['YANDEX_MAP_API'] %>&lang=ru_RU"
-          type="text/javascript">
-  </script>
-
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_pack_tag "application" %>
-
-</head>
 </html>
