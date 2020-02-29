@@ -43,6 +43,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.4'
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.6'
   gem 'capistrano-resque', '~> 0.2.3', require: false
+  gem 'capistrano-ssh-doctor'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'letter_opener', '~> 1.7'
