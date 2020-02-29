@@ -7,7 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 # server 'apxangelskoe.ru', user: 'deploy', roles: %w[app db web resque_worker]
-server '207.154.252.58', user: 'deploy', roles: %w[app db web resque_worker]
+server 'apxangelskoe.ru', user: 'deploy', roles: %w[app db web resque_worker]
 
 set :resque_environment_task, true
 
