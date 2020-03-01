@@ -11,6 +11,7 @@ require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 require "capistrano/passenger"
 require "capistrano-resque"
+require "capistrano/ssh_doctor"
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.7'

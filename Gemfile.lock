@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/capistrano-plugins/capistrano-ssh-doctor.git
+  revision: 0e5de7c1c4d987c16adeaea296f0e863b9cbec6f
+  specs:
+    capistrano-ssh-doctor (1.0.0)
+      capistrano (>= 3.1)
+
+GIT
   remote: https://github.com/thoughtbot/shoulda-matchers.git
   revision: 0b23942feb1166678c85c015f875faa2edf6627c
   specs:
@@ -93,8 +100,6 @@ GEM
       capistrano
       resque
       resque-scheduler
-    capistrano-ssh-doctor (1.0.0)
-      capistrano (>= 3.1)
     carrierwave (2.0.2)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -370,7 +375,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.4)
   capistrano-rbenv (~> 2.1, >= 2.1.6)
   capistrano-resque (~> 0.2.3)
-  capistrano-ssh-doctor
+  capistrano-ssh-doctor!
   carrierwave
   devise
   devise-i18n
