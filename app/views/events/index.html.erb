@@ -7,5 +7,10 @@
 </div>
 
 <div class="row buffer-bottom">
-  <%= render partial: 'events/event', collection: @events %>
+  <h2>Предстоящие</h2>
+  <%= render partial: 'events/event', collection: @events.select { |event| event.datetime >= Date.current }.sort_by(&:datetime) %>
+</div>
+<div class="row buffer-bottom">
+  <h2>Прошедшие</h2>
+  <%= render partial: 'events/event', collection: @events.select { |event| event.datetime < Date.current }.sort_by(&:datetime).reverse %>
 </div>
