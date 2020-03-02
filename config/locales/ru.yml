@@ -25,6 +25,7 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
         pincode: 'Пинкод'
+        go: 'Погнали'
       photo:
         user: 'Пользователь'
         photo: 'Фотография'
