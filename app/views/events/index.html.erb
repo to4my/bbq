@@ -12,5 +12,5 @@
 </div>
 <div class="row buffer-bottom">
   <h2>Прошедшие</h2>
-  <%= render partial: 'events/event', collection: @events.past %>
+  <%= render partial: 'events/event', collection: @events.past.reverse_order %>
 </div>

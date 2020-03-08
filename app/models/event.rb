@@ -6,6 +6,11 @@ class Event < ApplicationRecord
   has_many :subscribers, through: :subscriptions, source: :user
   has_many :photos
 
+  #scope :desc, order(name: :desc)
+  #scope :asc, order(name: :asc)
+
+  scope :sorted, -> { order(datetime: :asc) }
+  #scope :sorted_desc, -> { order(datetime: :desc) }
   scope :future, -> { where("datetime >=  ? ", Date.current) }
   scope :past, -> { where("datetime < ?", Date.current) }
 
