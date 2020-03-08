@@ -6,6 +6,9 @@ class Event < ApplicationRecord
   has_many :subscribers, through: :subscriptions, source: :user
   has_many :photos
 
+  scope :future, -> { where("datetime >=  ? ", Date.current) }
+  scope :past, -> { where("datetime < ?", Date.current) }
+
   validates :user, presence: true
 
   validates :title, presence: true, length: {maximum: 255}

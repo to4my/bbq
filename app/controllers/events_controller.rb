@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   after_action :verify_authorized, only: [:edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = Event.order(datetime: :asc)
   end
 
   def show
