@@ -10,7 +10,6 @@ class Event < ApplicationRecord
   #scope :asc, order(name: :asc)
 
   scope :sorted, -> { order(datetime: :asc) }
-  #scope :sorted_desc, -> { order(datetime: :desc) }
   scope :future, -> { where("datetime >=  ? ", Date.current) }
   scope :past, -> { where("datetime < ?", Date.current) }
 
