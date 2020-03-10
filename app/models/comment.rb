@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
 
   validate :name_used?, on: :create, unless: -> { user.present? }
 
-  scope :sorted_comment, -> { order(datetime: :asc) }
+  scope :sorted_comment, -> { order(created_at: :desc) }
 
   def user_name
     user.present? ? user.name : super
