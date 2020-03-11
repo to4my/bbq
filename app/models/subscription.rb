@@ -24,6 +24,6 @@ class Subscription < ApplicationRecord
   private
 
   def email_used?
-    errors.add(:user_email, I18n.t('subscriptions.email_used')) if User.where(email: user_email).present?
+    errors.add(:user_email, I18n.t(:email_used)) if User.where(email: user_email).present?
   end
 end
