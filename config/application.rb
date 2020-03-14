@@ -31,6 +31,7 @@ module BBQ
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.default_locale = :ru
+    config.active_model.i18n_customize_full_message = true
 
     # Don't generate system test files.
     config.generators.system_tests = nil

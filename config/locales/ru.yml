@@ -37,6 +37,12 @@ ru:
         user_name: 'Имя'
         user_email: 'Email'
         event: 'Событие'
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              user_email: 'Если это Ваша почта - залогиньтесь!'
   controllers:
     body: "Комментарий"
     users:
